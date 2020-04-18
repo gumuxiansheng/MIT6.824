@@ -8,7 +8,7 @@ This is a notebook on study MIT 6.284.
 
 This lab should build a MapReduce system, which may like below:
 ![MapReduce](https://github.com/gumuxiansheng/MIT6.824Labs/blob/master/docImg/2020-04-18-16-43-48.png?raw=true)
-*ImageSource: Dean, J., & Ghemawat, S. (2008). MapReduce: Simplified data processing on large clusters. Communications of the ACM, 51(1), 107â€“113. https://doi.org/10.1145/1327452.1327492*
+*ImageSource: Dean, J., & Ghemawat, S. (2008). MapReduce: Simplified data processing on large clusters. Communications of the ACM, 51(1), 107-113. https://doi.org/10.1145/1327452.1327492*
 
 The key is to complete the code for master and worker. While running, the master should keep trace of all the tasks and assign a proper one to the worker when requested. The tasks should be "map" task or "reduce" task, and "reduce" task should be run after all the "map" tasks finished.
 
@@ -26,7 +26,7 @@ At last, we got $X \times Y$ intermediate json files for "reduce" and nReduce re
 
 In this lab, we should be careful when reading and writing *TasksMonitor* in master processes. It's common to add a mutex lock on it.
 
-The frame of the lab is like below:
+The framework of the lab is like below:
 
 **The master:**
 ```go
