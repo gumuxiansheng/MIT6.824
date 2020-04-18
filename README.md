@@ -1,12 +1,14 @@
 # MIT 6.824 - Spring 2020
 
-The source code will be private, however, some thoughts may be inoffensive.
+This is a notebook on study MIT 6.284.
+
+**About the lab:** The source code will be private, however, some thoughts may be inoffensive.
 
 ## [Lab 1: MapReduce][lab1]
 
 This lab should build a MapReduce system, which may like below:
 ![MapReduce](https://github.com/gumuxiansheng/MIT6.824Labs/blob/master/docImg/2020-04-18-16-43-48.png?raw=true)
-*ImageSourceï¼šDean, J., & Ghemawat, S. (2008). MapReduce: Simplified data processing on large clusters. Communications of the ACM, 51(1), 107â€“113. https://doi.org/10.1145/1327452.1327492*
+*ImageSource: Dean, J., & Ghemawat, S. (2008). MapReduce: Simplified data processing on large clusters. Communications of the ACM, 51(1), 107â€“113. https://doi.org/10.1145/1327452.1327492*
 
 The key is to complete the code for master and worker. While running, the master should keep trace of all the tasks and assign a proper one to the worker when requested. The tasks should be "map" task or "reduce" task, and "reduce" task should be run after all the "map" tasks finished.
 
@@ -57,18 +59,15 @@ func MakeMaster(files []string, nReduce int) *Master {
 func Worker(mapf func(string, string) []KeyValue,
     reducef func(string, []string) string) {
 
-    // Dummy task to store the just finished task.
-    dummyTask := Task{}
+    // TODO: Dummy task to store the just finished task. Initialized by empty task.
 
     for {
-        receivedTask, nReduce := CallForTask(&dummyTask)
+        // TODO: Ask the master for a task
 
         if receivedTask.TaskType == WAIT {
             // TODO: Sleep for a second
-            time.Sleep(time.Second)
         } else if receivedTask.TaskType == EXIT {
             // TODO: Exit
-            return
         } else if receivedTask.TaskType == MAP {
             // TODO:
             // 1. Do map task
