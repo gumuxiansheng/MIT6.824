@@ -1,6 +1,6 @@
 # MIT 6.824 - Spring 2020
 
-The source code will be private, however, some thoughts may be helpful.
+The source code will be private, however, some thoughts may be inoffensive.
 
 ## [Lab 1: MapReduce][lab1]
 
